@@ -11,6 +11,7 @@
     "workbench.colorCustomizations": {
         "editor.selectionBackground": "#7b00ee"
     },
+    "editor.tabSize": 4,
 },
 {
     "typescript.tsdk": "node_modules/typescript/lib",
