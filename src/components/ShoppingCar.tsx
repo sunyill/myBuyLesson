@@ -35,35 +35,6 @@ class ShoppingCar extends React.Component<Props, State> {
     return (
       <div className={styles.cartContainer}>
         <div>
-          <button
-            className={styles.button}
-            // onClick={(preState,preProps)=>{
-            //   return {count:preState.count+1}
-            // },()=>{
-            //   console.log(this.state.count);
-            // }}
-            onClick={() => {
-              this.setState(
-                (preState, preProps) => {
-                  return { count: preState.count + 1 };
-                },
-                () => {
-                  console.log(this.state.count);
-                }
-              );
-              this.setState(
-                (preState, preProps) => {
-                  return { count: preState.count + 1 };
-                },
-                () => {
-                  console.log(this.state.count);
-                }
-              );
-            }}
-          >
-            点击增加
-          </button>
-          <span>{this.state.count} 次数</span>
           <button className={styles.button} onClick={this.handleClick}>
             <FiShoppingCart />
             <span>购物车 2件</span>
