@@ -1,0 +1,18 @@
+{
+    "editor.tokenColorCustomizations": {
+        "comments": "#9ddf05", // 注释
+        // "keywords": "#3e9df8", // 关键字
+        // "variables": "#000", // 变量名
+        // "strings": "#000", // 字符串
+        // "functions": "#000", // 函数名
+        // // "numbers": "#fff" // 数字
+        // // 选中高亮的颜色
+    }
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#7b00ee"
+    },
+},
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true
+}
