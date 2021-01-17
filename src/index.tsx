@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const auth = "aZan"
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App username = {auth}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

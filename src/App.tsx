@@ -5,7 +5,11 @@ import svgHeader from "./assets/images/logo.svg";
 import styles from "./App.module.css";
 import ShoppingCar from "./components/ShoppingCar";
 
-const App: React.FC = props => {
+interface Props {
+  username: string;
+}
+
+const App: React.FC<Props> = props => {
   const [count, setCount] = useState<number>(100);
   const [robotGallery, setRobotGallery] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -44,9 +48,10 @@ const App: React.FC = props => {
       <header className={styles.appHeader}>
         <img src={svgHeader} className={styles.appLogo} alt="" />
         <h1>Robot完美小机器人模型堪比变形金刚</h1>
+        <h2>{props.username}</h2>
       </header>
       <ShoppingCar></ShoppingCar>
-      {(!error || error !== "") && <div>"网站出错了",{error}</div>}
+      {(!error || error !== "") && <div>"网站出错了"{error}</div>}
       {!loading ? (
         <div className={styles.robotList}>
           {robotGallery.map(rEle => (
