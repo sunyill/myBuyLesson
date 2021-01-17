@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import robot from "./robotsData/robots.json";
 import RobotData from "./components/Robot";
+import RobotDiscountData from "./components/RobotDiscount";
 import svgHeader from "./assets/images/logo.svg";
 import styles from "./App.module.css";
 import ShoppingCar from "./components/ShoppingCar";
@@ -49,9 +50,17 @@ const App: React.FC = props => {
       {(!error || error !== "") && <div>"网站出错了"{error}</div>}
       {!loading ? (
         <div className={styles.robotList}>
-          {robotGallery.map(rEle => (
-            <RobotData id={rEle.id} name={rEle.name} email={rEle.email} />
-          ))}
+          {robotGallery.map((rEle, index) =>
+            index % 2 == 0 ? (
+              <RobotData id={rEle.id} name={rEle.name} email={rEle.email} />
+            ) : (
+              <RobotDiscountData
+                id={rEle.id}
+                name={rEle.name}
+                email={rEle.email}
+              />
+            )
+          )}
         </div>
       ) : (
         <h2>加载中 Loading.....</h2>

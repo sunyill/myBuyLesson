@@ -12,12 +12,18 @@ export interface RobotPropsData {
 }
 
 // 解构：({id,name,email})
-const Robot: React.FC<RobotPropsData> = ({ id, name, email, addToCart }) => {
+const RobotDiscount: React.FC<RobotPropsData> = ({
+  id,
+  name,
+  email,
+  addToCart
+}) => {
   const value = useContext(AppState);
 
   return (
     <div className={styles.cardContainer}>
       <img alt="" src={`https://robohash.org/${id}`}></img>
+      <h2>打折商品</h2>
       <h2>{name}</h2>
       <p>{email}</p>
       <p>作者:{value.username}</p>
@@ -26,4 +32,4 @@ const Robot: React.FC<RobotPropsData> = ({ id, name, email, addToCart }) => {
   );
 };
 
-export default withAddToCart(Robot);
+export default withAddToCart(RobotDiscount);
