@@ -9,7 +9,7 @@ export const withAddToCart = (
   // return class xx extends React.Component{}
 
   // 第二种 函数形式
-  return (props) => {
+  return props => {
     const setState = useContext(AppSetStateContext);
     const addToCart = (id, name) => {
       if (setState) {
@@ -23,4 +23,20 @@ export const withAddToCart = (
     };
     return <ChildCompoment {...props} addToCart={addToCart}></ChildCompoment>;
   };
+};
+
+//自定义钩子函数
+export const useAddToCart = () => {
+  const setState = useContext(AppSetStateContext);
+  const addToCart = (id, name) => {
+    if (setState) {
+      setState(state => {
+        return {
+          ...state,
+          shoppingCart: { items: [...state.shoppingCart.items, { id, name }] }
+        };
+      });
+    }
+  };
+  return addToCart;
 };
